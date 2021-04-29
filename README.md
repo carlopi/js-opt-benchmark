@@ -1,6 +1,8 @@
 # js-opt-benchmark
 Benchmarks for "A JavaScript optimizing compiler"
 
+Check it out live: [benchmark](https://carlopi.github.io/js-opt-benchmark/)
+
 This is an experiment: (typed) JavaScript to C++ to optimized JavaScript compiler.
 
 Read the article: [A JavaScript optimizing compiler](https://medium.com/leaningtech).

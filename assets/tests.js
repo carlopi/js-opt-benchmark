@@ -1,8 +1,8 @@
 function runTestPromise (directory, N) {
   return new Promise(async function (resolve) {
 	var suite = new Benchmark.Suite;
-	var originalWorker = new Worker('/' + directory + '/original.js');
-	var optimizedWorker = new Worker('/' + directory + '/optimized.js');
+	var originalWorker = new Worker('./' + directory + '/original.js');
+	var optimizedWorker = new Worker('./' + directory + '/optimized.js');
 
 	function runWorkerPromise(worker, input, deferred)
 	{

@@ -1,0 +1,28 @@
+.progress {
+	display: flex;
+	width: 100%;
+	height: 16px;
+	border-radius: 8px;
+	overflow: hidden;
+	outline: 1px solid transparent;
+	background-color: gainsboro;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+.progress-item {
+	outline: 2px solid transparent;
+}
+h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+p {
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+}
+.disappear {
+	display: none;
+}
+h3:last-of-type > .disappear{
+	display: inline;
+}

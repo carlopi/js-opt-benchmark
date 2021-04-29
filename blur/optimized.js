@@ -1,0 +1,11 @@
+"use strict";/*Compiled using Cheerp (R) by Leaning Technologies Ltd*/var X=Math.imul;var Y=Math.fround;var oSlot=0;var nullArray=[null];var nullObj={d:nullArray,o:0};function W(h,g,f,e){var a=null,d=null,c=null,b=null;if(!(e===0)){a=new Uint32Array(h.buffer);d=new Uint32Array(+a.length);c=new Float32Array( +Math.max(g,f)*4);b=S(e);D(a,d,c,b,g,f);D(d,a,c,b,f,g);}return h;}function D(H,I,J,K,L,M){var B=-0.,V=-0.,U=0,T=0,l=-0.,m=-0.,w=-0.,v=-0.,G=-0.,p=-0.,d=-0.,b=0,a=-0.,e=-0.,i=-0.,f=-0.,g=-0.,h=-0.,n=-0.,j=-0.,c=-0.,k=-0.,o=-0.,t=-0.,u=-0.,q=-0.,r=-0.,y=-0.,z=-0.,A=-0.;if(M>0){B=L+ -1;V=B*M;U=B>=0?1:0;T=L>0?1:0;p=0;while(1){d=p*L;b=H[0+~~d|0]|0;a=+K[0+6|0];e=(+(b&255|0));i=e*a;f=(+(b>>>8&255|0));g=a*f;h=(+(b>>>16&255|0));n=a*h;j=(+(b>>>24|0));a*=j;c=+K[0];k=+K[0+1|0];l=+K[0+5|0];m=+K[0+4|0];if(T){k=k;o=c;y=a;r=n;q=i;u=g;c=0;t=0;while(1){b=H[0+~~d|0]|0;z=(+(b&255|0));e=q*l+(i*m+(e*k+o*z));q=(+(b>>>8&255|0));f=g*l+(u*m+(f*k+o*q));g=(+(b>>>16&255|0));h=r*l+(n*m+(h*k+o*g));r=(+(b>>>24|0));j=y*l+(a*m+(j*k+o*r));J[0+~~c|0]=Y(e);J[0+~~(c+1)|0]=Y(f);J[0+~~(c+2)|0]=Y(h);J[0+~~(c+3)|0]=Y(j);t+=1;d+=1;c+=4;if(t<L){y=a;a=j;j=r;r=n;n=h;h=g;g=u;u=f;f=q;q=i;i=e;e=z;continue;}break;}}else{c=0;}d+= -1;b=H[0+~~d|0]|0;a=+K[0+7|0];e=(+(b&255|0));i=e*a;f=(+(b>>>8&255|0));g=a*f;h=(+(b>>>16&255|0));n=a*h;j=(+(b>>>24|0));a*=j;k=+K[0+2|0];o=+K[0+3|0];if(U){w=o;v=k;z=n;y=a;r=g;q=j;u=e;t=i;o=h;k=f;G=V+p;A=B;while(1){e=e*w+u*v+i*m+t*l;g=k*w+f*v+r*m+g*l;k=o*w+h*v+n*m+z*l;a=j*w+q*v+y*m+a*l;b=H[0+~~d|0]|0;c+= -4;I[0+~~G|0]=(((~~(g+ +J[0+~~(c+1)|0])<<8)+~~(e+ +J[0+~~c|0])|0)+(~~(k+ +J[0+~~(c+2)|0])<<16)|0)+(~~(a+ +J[0+~~(c+3)|0])<<24)|0;A+= -1;if(A>=0){z=n;t=i;o=h;j=q;n=k;k=f;i=r;r=g;g=i;i=e;e=u;f=y;y=a;a=f;G-=M;d+= -1;u=(+(b&255|0));f=(+(b>>>8&255|0));h=(+(b>>>16&255|0));q=(+(b>>>24|0));continue;}break;}}p+=1;if(p<M)continue;break;}}}function S(f){var c=-0.,d=-0.,e=null,a=-0.,b=-0.;if(f<.5){a=.5;}else{a=f;}a= +Math.exp(.527076)/a;c=+Math.exp(-a);d=+Math.exp(a* -2);b=1-c;b=b*b/(c*(a*2)+1-d);F=(c*((a+1)*b)-d*b)/(d+(1-c*2));e=new Float32Array(8);e[0]=Y( +F);return e;}var F=0;var blurRGBA=W;blurRGBA.promise=Promise.resolve();
+
+/////BENCHMARKING CODE
+onmessage = function (e)
+{
+	const N = e.data[0];
+	const data = new Uint8ClampedArray(N * N * 4);
+	data.forEach((_, i, arr) => arr[i] = Math.random() * 255);
+    	blurRGBA(data, N, N, 100);
+	postMessage("Done");
+}
